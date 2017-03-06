@@ -1,0 +1,32 @@
+{
+  "name": "Autocoplite",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Пробую реализовать автокомплит",
+  "author": "Ilya Suglobov",
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "browser-sync": "^2.18.8",
+    "eslint": "3.9.0",
+    "eslint-config-htmlacademy": "0.2.x",
+    "gulp-less": "^3.3.0",
+    "gulp-postcss": "^6.3.0"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "eslint js/",
+    "start": "gulp serve"
+  },
+  "engines": {
+    "node": "^6.9"
+  },
+  "openBrowser": false
+}
