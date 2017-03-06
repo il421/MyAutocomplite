@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var server = require('browser-sync').create();
 var less = require('gulp-less');
