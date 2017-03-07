@@ -1,19 +1,37 @@
 .city-searchbox {
+
   .container();
   margin-top: 20px;
 
-  background: @block-color;
-  border-radius: 10px;
+  // background: @block-color;
+  // border-radius: 10px;
 };
 
 .city-searchbox input {
   width: 250px;
 
-  margin: 20px 20px 20px 20px;
+  margin: 20px;
   padding: 5px;
 };
 
 .city-searchbox label {
   margin: 20px 0 20px 20px;
   font-weight: bold;
+};
+
+.city-searchbox__options {
+  position: absolute;
+  top: 75px;
+  left: 135px;
+
+  width: 300px;
+  max-height: 400px;
+  min-height: 200px;
+  padding: 5px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  border: 1px solid black;
+  box-shadow: 0 2px 3px #c7c7c7;
 };
