@@ -194,11 +194,18 @@ body {
 .city-searchbox {
   width: 320px;
   margin: 0 auto;
-  width: 200px;
-  height: 200px;
+  margin-top: 20px;
   background: #63d1bb;
-  border: 2px solid #404040;
   border-radius: 10px;
+}
+.city-searchbox input {
+  width: 250px;
+  margin: 20px 20px 20px 20px;
+  padding: 5px;
+}
+.city-searchbox label {
+  margin: 20px 0 20px 20px;
+  font-weight: bold;
 }
 @media (min-width: 768px) {
   .city-searchbox {
