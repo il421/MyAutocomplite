@@ -15,15 +15,19 @@
   "devDependencies": {
     "autoprefixer": "^6.7.6",
     "browser-sync": "^2.18.8",
+    "css-mqpacker": "^5.0.1",
     "eslint": "3.9.0",
     "eslint-config-htmlacademy": "0.2.x",
     "gulp-less": "^3.3.0",
-    "gulp-postcss": "^6.3.0"
+    "gulp-postcss": "^6.3.0",
+    "i": "^0.3.5",
+    "load-gulp-tasks": "^0.1.0",
+    "npm": "^3.10.8"
   },
   "dependencies": {},
   "scripts": {
     "test": "eslint js/",
-    "start": "gulp serve"
+    "start": "gulp style && gulp serve"
   },
   "engines": {
     "node": "^6.9"

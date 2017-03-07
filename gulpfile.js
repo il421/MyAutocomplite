@@ -3,10 +3,11 @@
 var gulp = require('gulp');
 var server = require('browser-sync').create();
 var less = require('gulp-less');
+var mqpacker = require("css-mqpacker");
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 
-gulp.task('less', function () {
+gulp.task('style', function() {
   gulp.src('less/style.less')
     .pipe(less())
     .pipe(postcss([
