@@ -205,26 +205,40 @@ body {
   margin: 20px 0 20px 20px;
   font-weight: bold;
 }
-.city-searchbox__options {
+.city-options {
+  display: none;
   position: absolute;
-  top: 75px;
-  left: 135px;
+  top: 95px;
+  left: 90px;
   width: 300px;
   max-height: 400px;
   min-height: 200px;
-  padding: 5px;
   overflow-x: hidden;
   overflow-y: auto;
-  border: 1px solid black;
+  border: 1px solid #404040;
   box-shadow: 0 2px 3px #c7c7c7;
+}
+.city-options__result:hover {
+  background-color: #1e90ff;
+  cursor: pointer;
+}
+.city-options__result {
+  padding: 5px;
 }
 @media (min-width: 768px) {
   .city-searchbox {
     width: 768px;
   }
+  .city-options {
+    top: 75px;
+    left: 155px;
+  }
 }
 @media (min-width: 1150px) {
   .city-searchbox {
     width: 1150px;
+  }
+  .city-options {
+    left: 190px;
   }
 }
