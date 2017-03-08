@@ -43,6 +43,15 @@ window.load(function (evt) {
     searchboxList.appendChild(searchboxResult.cloneNode(true));
   });
 
+  // var filtredData = data.concat().filter(function () {
+  //   for (var i = 0; i < data.length; i++) {
+  //     if (data[i].City === 'Екатеринбург') {
+  //       return data[i].City;
+  //     }
+  //   }
+  // });
+  // console.log(filtredData);
+
   searchboxInput.addEventListener('keydown', function () {
     searchboxOptions.style.display = 'block';
 
