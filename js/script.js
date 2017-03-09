@@ -10,19 +10,6 @@
   };
 })();
 
-// (function () {
-//   var searchboxInput = document.querySelector('.city-searchbox input');
-//   var searchboxOptions = document.querySelector('.city-options');
-//
-//   searchboxInput.addEventListener('keydown', function (evt) {
-//     searchboxOptions.style.display = 'block';
-//     console.log(evt.key);
-//   });
-//
-//   document.addEventListener('click', function () {
-//     searchboxOptions.style.display = 'none';
-//   });
-// })();
 
 window.load(function (evt) {
   var data = JSON.parse(evt.target.response);
@@ -32,30 +19,31 @@ window.load(function (evt) {
   var searchboxInput = document.querySelector('.city-searchbox input');
   var searchboxOptions = document.querySelector('.city-options');
 
-  var renderItem = function (arr) {
-    var cityResult = document.querySelectorAll('.city-options__result span');
-    for (var i = 0; i < arr.length; i++) {
-      cityResult[i].textContent = arr[i].City;
-    }
-  };
-
-  data.forEach(function () {
-    searchboxList.appendChild(searchboxResult.cloneNode(true));
-  });
-
-  // var filtredData = data.concat().filter(function () {
-  //   for (var i = 0; i < data.length; i++) {
-  //     if (data[i].City === 'Екатеринбург') {
-  //       return data[i].City;
-  //     }
+  // var renderItem = function (arr) {
+  //   var cityResult = document.querySelectorAll('.city-options__result span');
+  //   console.log(cityResult);
+  //   for (var i = 0; i < arr.length; i++) {
+  //     cityResult[i].textContent = arr[i].City;
   //   }
-  // });
-  // console.log(filtredData);
+  // };
 
-  searchboxInput.addEventListener('keydown', function () {
+  // data.forEach(function () {
+  //   searchboxList.appendChild(searchboxResult.cloneNode(true));
+  // });
+
+  // renderItem(data);
+
+  searchboxInput.addEventListener('keyup', function () {
     searchboxOptions.style.display = 'block';
 
-    renderItem(data);
+    for (var i = 0; i < 5000; i++) {
+      var dataCity = data[i].City;
+      var cityResult = document.querySelectorAll('.city-options__result span');
+
+      if (dataCity.indexOf(searchboxInput.value) > -1) {
+        searchboxList.appendChild(searchboxResult.cloneNode(cityResult[i].textContent = dataCity));
+      }
+    }
   });
 
   document.addEventListener('click', function () {
