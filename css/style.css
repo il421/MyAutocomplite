@@ -201,6 +201,18 @@ body {
   margin: 20px;
   padding: 5px;
 }
+:focus::-webkit-input-placeholder {
+  color: #d3d3d3;
+}
+:focus::-moz-placeholder {
+  color: #d3d3d3;
+}
+:focus:-moz-placeholder {
+  color: #d3d3d3;
+}
+:focus:-ms-input-placeholder {
+  color: #d3d3d3;
+}
 .city-searchbox label {
   margin: 20px 0 20px 20px;
   font-weight: bold;
