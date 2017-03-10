@@ -11,7 +11,6 @@
   };
 })();
 
-
 window.load(function (evt) {
   var data = JSON.parse(evt.target.response);
 
@@ -33,10 +32,6 @@ window.load(function (evt) {
       return elm.City.toLowerCase().indexOf(src.toLowerCase()) > -1;
     });
   };
-
-  // var test = function () {
-  //   searchboxList.firstChild.style.background = '#1e90ff';
-  // };
 
   // FILTER DATA
   searchboxInput.addEventListener('keyup', function (evt) {
