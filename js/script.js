@@ -3,10 +3,15 @@
 // LOAD DATA
 (function () {
   var CITIES_DATE = '../kladr.json';
+  var loaderRing = document.querySelector('.loader');
   window.load = function (onload) {
     var xhr = new XMLHttpRequest();
     xhr.addEventListener('load', onload);
     xhr.open('GET', CITIES_DATE);
+    xhr.addEventListener('timeout', function () {
+      loaderRing.style.display = 'flex';
+    });
+    xhr.timeout = 500;
     xhr.send();
   };
 })();
