@@ -23,6 +23,7 @@
     //   loaderRing.style.display = 'flex';
     // });
     // xhr.timeout = 500;
+
     xhr.send();
   };
 })();
