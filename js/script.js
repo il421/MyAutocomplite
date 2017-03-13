@@ -11,6 +11,14 @@
     var xhr = new XMLHttpRequest();
     xhr.addEventListener('load', onload);
     xhr.open('GET', CITIES_DATE);
+    errorUpdate.addEventListener('click', function (evt) {
+      xhr.addEventListener('load', onload);
+      errorInformation.style.display = 'none';
+    });
+    xhr.addEventListener('error', function () {
+      errorInformation.style.display = 'flex';
+    });
+
     // xhr.addEventListener('timeout', function () {
     //   loaderRing.style.display = 'flex';
     // });
