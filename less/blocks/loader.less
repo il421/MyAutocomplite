@@ -1,0 +1,48 @@
+.loader {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 95px;
+  left: 90px;
+
+  width: 300px;
+  height: 30px;
+
+  border: 1px solid @text-color;
+  box-shadow: 0 2px 3px #c7c7c7;
+};
+
+.loader__ring {
+  width: 10px;
+  height: 10px;
+
+  margin: 0 5px;
+
+  border: 2px solid darken(@placeholder-color, 20%);
+  border-top: 2px solid @main-background-color;
+  border-radius: 50%;
+
+  animation: spin 3s linear infinite;
+};
+
+.loader span {
+  color: darken(@placeholder-color, 20%);
+};
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+};
+
+@media @tablet-widths {
+  .loader {
+    top: 75px;
+    left: 155px;
+  };
+};
+
+@media @desktop-widths {
+  .loader {
+    left: 190px;
+  };
+};

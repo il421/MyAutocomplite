@@ -237,11 +237,46 @@ body {
 .city-options__result {
   padding: 5px;
 }
+.loader {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 95px;
+  left: 90px;
+  width: 300px;
+  height: 30px;
+  border: 1px solid #404040;
+  box-shadow: 0 2px 3px #c7c7c7;
+}
+.loader__ring {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border: 2px solid #a0a0a0;
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+}
+.loader span {
+  color: #a0a0a0;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media (min-width: 768px) {
   .city-searchbox {
     width: 768px;
   }
   .city-options {
+    top: 75px;
+    left: 155px;
+  }
+  .loader {
     top: 75px;
     left: 155px;
   }
@@ -251,6 +286,9 @@ body {
     width: 1150px;
   }
   .city-options {
+    left: 190px;
+  }
+  .loader {
     left: 190px;
   }
 }
