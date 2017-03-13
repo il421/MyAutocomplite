@@ -267,6 +267,28 @@ body {
     transform: rotate(360deg);
   }
 }
+.error {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  left: 85px;
+  width: 300px;
+  height: auto;
+  border: 1px solid #404040;
+  box-shadow: 0 2px 3px #c7c7c7;
+}
+.error span {
+  padding: 5px;
+}
+.error__message {
+  color: #a0a0a0;
+}
+.error__update {
+  cursor: pointer;
+  background-color: #1e90ff;
+  color: #ffffff;
+}
 @media (min-width: 768px) {
   .city-options {
     top: 70px;

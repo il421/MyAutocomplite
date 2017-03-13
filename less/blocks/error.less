@@ -1,0 +1,28 @@
+.error {
+  display: none;
+  flex-direction: column;
+
+  position: absolute;
+  top: 70px;
+  left: 85px;
+
+  width: 300px;
+  height: auto;
+
+  border: 1px solid @text-color;
+  box-shadow: 0 2px 3px #c7c7c7;
+};
+
+.error span {
+  padding: 5px;
+};
+
+.error__message {
+  color: darken(@placeholder-color, 20%);
+};
+
+.error__update {
+  cursor: pointer;
+  background-color: @hover-color;
+  color: @main-background-color;
+};
