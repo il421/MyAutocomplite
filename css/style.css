@@ -230,6 +230,7 @@ body {
   box-shadow: 0 2px 3px #c7c7c7;
 }
 .city-options__result:hover {
+  color: #ffffff;
   background-color: #1e90ff;
   cursor: pointer;
 }
