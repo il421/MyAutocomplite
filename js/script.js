@@ -6,23 +6,31 @@
   var loaderRing = document.querySelector('.loader');
   var errorInformation = document.querySelector('.error');
   var errorUpdate = document.querySelector('.error__update');
+  var timerLoader = function () {
+    setInterval(function () {
+      loaderRing.style.display = 'none';
+    }, 1000);
+  };
 
   window.load = function (onload) {
     var xhr = new XMLHttpRequest();
+
     xhr.addEventListener('load', onload);
     xhr.open('GET', CITIES_DATE);
+
     errorUpdate.addEventListener('click', function (evt) {
       xhr.addEventListener('load', onload);
       errorInformation.style.display = 'none';
     });
+
     xhr.addEventListener('error', function () {
       errorInformation.style.display = 'flex';
     });
 
-    // xhr.addEventListener('timeout', function () {
-    //   loaderRing.style.display = 'flex';
-    // });
-    // xhr.timeout = 500;
+    xhr.addEventListener('timeout', function (evt) {
+      timerLoader(loaderRing.style.display = 'flex');
+    });
+    xhr.timeout = 500;
 
     xhr.send();
   };
@@ -51,10 +59,10 @@ window.load(function (evt) {
   };
 
   // FILTER DATA
-  searchboxInput.addEventListener('keyup', function (evt) {
+  searchboxInput.addEventListener('keyup', function (e) {
     var searchValue = searchboxInput.value;
 
-    if (evt.keyCode !== KEY_SPACE) {
+    if (e.keyCode !== KEY_SPACE) {
       while (searchboxList.lastChild) {
         searchboxList.removeChild(searchboxList.lastChild);
       }
@@ -78,4 +86,11 @@ window.load(function (evt) {
   searchboxList.addEventListener('click', function (e) {
     searchboxInput.value = e.target.innerText;
   }, true);
+
+  // searchboxList.addEventListener('keydown', function (e) {
+  //   if (window.utils.isActiavateEvent(e)) {
+  //     searchboxInput.value = e.target.innerText;
+  //   }
+  // }, true);
+
 });
