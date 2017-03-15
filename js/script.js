@@ -43,7 +43,7 @@ window.load(function (evt) {
   var searchboxResult = document.querySelector('.city-options__result');
   var searchboxInput = document.querySelector('.city-searchbox input');
   var searchboxOptions = document.querySelector('.city-options');
-  var KEY_SPACE = 32;
+  var SPACE_KEY_CODE = 32;
 
   var renderItem = function (arr) {
     var cityResult = document.querySelectorAll('.city-options__result span');
@@ -62,7 +62,7 @@ window.load(function (evt) {
   searchboxInput.addEventListener('keyup', function (e) {
     var searchValue = searchboxInput.value;
 
-    if (e.keyCode !== KEY_SPACE) {
+    if (e.keyCode !== SPACE_KEY_CODE) {
       while (searchboxList.lastChild) {
         searchboxList.removeChild(searchboxList.lastChild);
       }
