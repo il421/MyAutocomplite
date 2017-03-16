@@ -11,8 +11,14 @@ window.load(function (evt) {
 
   var renderItem = function (arr) {
     var cityResult = document.querySelectorAll('.city-options__result span');
-    for (var i = 0; i < arr.length; i++) {
-      cityResult[i].textContent = arr[i].City;
+    if (arr.length === 0) {
+      searchboxList.textContent = 'Не найдено';
+      searchboxList.style.padding = '5px';
+    } else {
+      for (var i = 0; i < arr.length; i++) {
+        cityResult[i].textContent = arr[i].City;
+        searchboxList.style.padding = '';
+      }
     }
   };
 
@@ -51,10 +57,10 @@ window.load(function (evt) {
     searchboxInput.value = e.target.innerText;
   }, true);
 
+
   // searchboxList.addEventListener('keydown', function (e) {
   //   if (window.utils.isActiavateEvent(e)) {
   //     searchboxInput.value = e.target.innerText;
   //   }
   // }, true);
-
 });
