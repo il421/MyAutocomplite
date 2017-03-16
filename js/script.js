@@ -20,12 +20,17 @@ window.load(function (evt) {
         searchboxList.style.padding = '';
       }
     }
+    searchboxOptions.style.display = 'block';
   };
 
   var dateFiltred = function (src) {
     return data.filter(function (elm) {
       return elm.City.toLowerCase().indexOf(src.toLowerCase()) > -1;
     });
+  };
+
+  var inputInnerText = function (e) {
+    searchboxInput.value = e.target.innerText;
   };
 
   // FILTER DATA
@@ -42,8 +47,6 @@ window.load(function (evt) {
       });
 
       renderItem(dateFiltred(searchValue));
-
-      searchboxOptions.style.display = 'block';
     }
   });
 
@@ -54,12 +57,14 @@ window.load(function (evt) {
 
   // SELECT DATA
   searchboxList.addEventListener('click', function (e) {
-    searchboxInput.value = e.target.innerText;
+    inputInnerText(e);
+    searchboxList.firstChild.style.background = '#ffffff';
+    searchboxList.firstChild.style.color = '#404040';
   }, true);
 
-  // searchboxList.addEventListener('keydown', function (e) {
-  //   if (window.utils.isActiavateEvent(e)) {
-  //     searchboxInput.value = e.target.innerText;
-  //   }
-  // }, true);
+  searchboxList.addEventListener('keydown', function (e) {
+    if (window.utils.isActiavateEvent(e)) {
+      inputInnerText(e);
+    }
+  }, true);
 });
