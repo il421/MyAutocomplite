@@ -57,7 +57,6 @@ window.load(function (evt) {
     searchboxInput.value = e.target.innerText;
   }, true);
 
-
   // searchboxList.addEventListener('keydown', function (e) {
   //   if (window.utils.isActiavateEvent(e)) {
   //     searchboxInput.value = e.target.innerText;
