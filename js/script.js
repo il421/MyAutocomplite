@@ -1,6 +1,8 @@
 'use strict';
 
 window.load(function (evt) {
+  var SPACE_KEY_CODE = 32;
+
   var data = JSON.parse(evt.target.response);
 
   var searchboxList = document.querySelector('.city-options__list');
@@ -8,7 +10,6 @@ window.load(function (evt) {
   var searchboxInput = document.querySelector('.city-searchbox input');
   var searchboxOptions = document.querySelector('.city-options');
   var searchboxPin = document.querySelector('.city-searchbox__pin');
-  var SPACE_KEY_CODE = 32;
 
   var renderItem = function (arr) {
     var cityResult = document.querySelectorAll('.city-options__result span');
@@ -61,9 +62,7 @@ window.load(function (evt) {
   });
 
   // SELECT DATA
-  searchboxList.addEventListener('click', function (e) {
-    inputInnerText(e);
-  }, true);
+  searchboxList.addEventListener('click', inputInnerText, true);
 
   searchboxList.addEventListener('keydown', function (e) {
     if (window.utils.isActiavateEvent(e)) {
