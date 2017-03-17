@@ -212,7 +212,7 @@ body {
   margin-top: 20px;
 }
 .city-searchbox input {
-  width: 250px;
+  width: 270px;
   margin: 20px;
   padding: 5px;
   border: 1px solid #a0a0a0;
@@ -221,7 +221,7 @@ body {
   content: "";
   position: absolute;
   top: 45px;
-  left: 260px;
+  left: 280px;
   font-family: "Kontur Iconic", "Arial", sans-serif;
   color: #a0a0a0;
   cursor: pointer;
@@ -250,7 +250,7 @@ body {
   position: absolute;
   top: 90px;
   left: 20px;
-  width: 280px;
+  width: 300px;
   max-height: 400px;
   min-height: 30px;
   overflow-x: hidden;
@@ -329,7 +329,7 @@ body {
   }
   .city-searchbox__pin {
     top: 25px;
-    left: 325px;
+    left: 345px;
   }
   .city-options {
     top: 70px;

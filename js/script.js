@@ -31,34 +31,32 @@ window.load(function (evt) {
 
   var inputInnerText = function (e) {
     searchboxInput.value = e.target.innerText;
+    searchboxOptions.classList.add('visually-hidden');
+  };
+
+  var fillList = function () {
+    var searchValue = searchboxInput.value;
+    while (searchboxList.lastChild) {
+      searchboxList.removeChild(searchboxList.lastChild);
+    }
+
+    dataFiltred(searchValue).forEach(function () {
+      searchboxList.appendChild(searchboxResult.cloneNode(true));
+    });
+
+    renderItem(dataFiltred(searchValue));
   };
 
   // FILTER DATA
   searchboxInput.addEventListener('keyup', function (e) {
-    var searchValue = searchboxInput.value;
-
     if (e.keyCode !== SPACE_KEY_CODE) {
-      while (searchboxList.lastChild) {
-        searchboxList.removeChild(searchboxList.lastChild);
-      }
-
-      dataFiltred(searchValue).forEach(function () {
-        searchboxList.appendChild(searchboxResult.cloneNode(true));
-      });
-
-      renderItem(dataFiltred(searchValue));
-
+      fillList();
       searchboxOptions.classList.remove('visually-hidden');
     }
   });
 
   searchboxPin.addEventListener('click', function () {
-    data.forEach(function () {
-      searchboxList.appendChild(searchboxResult.cloneNode(true));
-    });
-
-    renderItem(data);
-
+    fillList();
     searchboxOptions.classList.toggle('visually-hidden');
   });
 
