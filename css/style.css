@@ -1,3 +1,12 @@
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -185,7 +194,21 @@ body {
   color: #404040;
   background-color: #ffffff;
 }
+@font-face {
+  font-weight: normal;
+  font-family: "Kontur Iconic";
+  font-style: normal;
+  src: url("../fonts/Kontur-Iconic-eco-20px.ttf") format("truetype");
+}
+@font-face {
+  font-weight: normal;
+  font-family: "Kontur Iconic";
+  font-style: normal;
+  src: url("../fonts/kontur-iconic-eco-webfont.ttf") format("truetype");
+}
 .city-searchbox {
+  width: 320px;
+  position: relative;
   margin-top: 20px;
 }
 .city-searchbox input {
@@ -193,6 +216,15 @@ body {
   margin: 20px;
   padding: 5px;
   border: 1px solid #a0a0a0;
+}
+.city-searchbox__pin {
+  content: "";
+  position: absolute;
+  top: 45px;
+  left: 260px;
+  font-family: "Kontur Iconic", "Arial", sans-serif;
+  color: #a0a0a0;
+  cursor: pointer;
 }
 .city-searchbox input:focus {
   margin: 19px;
@@ -215,11 +247,10 @@ body {
   font-weight: bold;
 }
 .city-options {
-  display: none;
   position: absolute;
-  top: 70px;
-  left: 85px;
-  width: 300px;
+  top: 90px;
+  left: 20px;
+  width: 280px;
   max-height: 400px;
   min-height: 30px;
   overflow-x: hidden;
@@ -293,6 +324,13 @@ body {
   color: #ffffff;
 }
 @media (min-width: 768px) {
+  .city-searchbox {
+    width: 768px;
+  }
+  .city-searchbox__pin {
+    top: 25px;
+    left: 325px;
+  }
   .city-options {
     top: 70px;
     left: 85px;
@@ -303,8 +341,8 @@ body {
   }
 }
 @media (min-width: 1150px) {
-  .city-options {
-    left: 85px;
+  .city-searchbox {
+    width: 1150px;
   }
   .loader {
     left: 85px;

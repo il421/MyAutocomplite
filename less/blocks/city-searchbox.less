@@ -1,4 +1,8 @@
 .city-searchbox {
+  .container();
+
+  position: relative;
+
   margin-top: 20px;
 };
 
@@ -9,6 +13,19 @@
   padding: 5px;
 
   border: 1px solid darken(@placeholder-color, 20%);
+};
+
+.city-searchbox__pin {
+  content: "";
+  position: absolute;
+
+  top: 45px;
+  left: 260px;
+
+  font-family: "Kontur Iconic", "Arial", sans-serif;
+  color: darken(@placeholder-color, 20%);
+
+  cursor: pointer;
 };
 
 .city-searchbox input:focus {
@@ -37,4 +54,11 @@
   margin: 20px 0 20px 20px;
 
   font-weight: bold;
+};
+
+@media @tablet-widths {
+  .city-searchbox__pin {
+    top: 25px;
+    left: 325px;
+  };
 };
